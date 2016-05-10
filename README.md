@@ -29,3 +29,14 @@ JC is functional, dynamically typed language that has syntaxt like C and functio
 2. If, if-else, 
 3. While, for-loop, 
 4. Return
+
+###Build
+```
+cd interpreter
+make
+```
+###USAGE
+```
+./interpreter good/test1.jc # execute code from file
+./interpreter 				# interact mode - display prompt
+```
