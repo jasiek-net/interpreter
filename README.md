@@ -35,7 +35,7 @@ JC is functional, dynamically typed language that has syntaxt like C and functio
 cd interpreter
 make
 ```
-###USAGE
+###Usage
 ```
 ./interpreter good/test1.jc # execute code from file
 ./interpreter 				# interact mode - display prompt
