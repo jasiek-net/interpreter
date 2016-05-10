@@ -8,78 +8,78 @@ Pro. Program ::= [Exp] ;
 comment "//";
 comment "/*" "*/";
 
-terminator Exp "";
-separator  Exp ";";
-separator Ident ",";
+terminator  Exp "";
+separator   Exp ";";
+separator   Ident ",";
 
 -- STATEMENTS: block, if, ifelse, while, for
-EBlock.		Exp ::= "{" [Exp] "}";
+EBlock.   Exp ::= "{" [Exp] "}";
 EIfStmt.  Exp ::= "if" "(" Exp ")" Exp;
-EIfElse.	Exp ::= "if" "(" Exp ")" Exp "else" Exp;
-EWhile.		Exp ::= "while" "(" Exp ")" Exp;
-EForLoo.	Exp ::= "for" "(" [Exp] ")" Exp;
+EIfElse.  Exp ::= "if" "(" Exp ")" Exp "else" Exp;
+EWhile.   Exp ::= "while" "(" Exp ")" Exp;
+EForLoo.  Exp ::= "for" "(" [Exp] ")" Exp;
 
 -- DECLARIATIONS: var, fun, array
-EDecEmp.	Exp ::= "var" Ident ;
-EDecVar.	Exp ::= "var" Ident "=" Exp ;
-EDecAno.	Exp ::= "fun" "(" [Ident] ")" Exp12;
-EDecFun.	Exp ::= "fun" Ident "(" [Ident] ")" Exp12;
+EDecEmp.  Exp ::= "var" Ident ;
+EDecVar.  Exp ::= "var" Ident "=" Exp ;
+EDecAno.  Exp ::= "fun" "(" [Ident] ")" Exp12;
+EDecFun.  Exp ::= "fun" Ident "(" [Ident] ")" Exp12;
 
 -- FUNCTIONS: own, str, int, print
 EFun.     Exp10 ::= Exp10 "(" [Exp] ")" ;
-EFunExp.	Exp12 ::= "{" [Exp] "}";
-EReturn.	Exp10 ::= "return" Exp;
-EToStr.		Exp10 ::= "str" "(" Exp ")";
-EToInt.		Exp10 ::= "int" "(" Exp ")";
-EPrint.		Exp ::= "print" "(" Exp ")" ";";
+EFunExp.  Exp12 ::= "{" [Exp] "}";
+EReturn.  Exp10 ::= "return" Exp;
+EToStr.   Exp10 ::= "str" "(" Exp ")";
+EToInt.   Exp10 ::= "int" "(" Exp ")";
+EPrint.   Exp ::= "print" "(" Exp ")" ";";
 
 -- ARRAY: assign, get elem
 EAss.     Exp  ::= Exp9 AssOp Exp ;
-EElem.		Exp10 ::= Ident "[" Exp "]";
+EElem.    Exp10 ::= Ident "[" Exp "]";
 
-EPre.  		Exp9 ::= SSym Exp9 ;
+EPre.     Exp9 ::= SSym Exp9 ;
 EPreOp.   Exp9 ::= UnaOp Exp8 ;
-EPost. 		Exp10 ::= Exp10 SSym ;
+EPost.    Exp10 ::= Exp10 SSym ;
 
 -- LOGICAL EXPRESSIONS:
-ELor.     Exp1 ::= Exp1 "||" Exp2 ;
-EAnd.   	Exp2 ::= Exp2 "&&" Exp3 ;
-EEqu.     Exp3 ::= Exp3 "==" Exp4 ;
-ENeq.     Exp3 ::= Exp3 "!=" Exp4 ;
-ELrt.     Exp4 ::= Exp4 "<" Exp5 ;
-EGrt.     Exp4 ::= Exp4 ">" Exp5 ;
+ELor.   Exp1 ::= Exp1 "||" Exp2 ;
+EAnd.   Exp2 ::= Exp2 "&&" Exp3 ;
+EEqu.   Exp3 ::= Exp3 "==" Exp4 ;
+ENeq.   Exp3 ::= Exp3 "!=" Exp4 ;
+ELrt.   Exp4 ::= Exp4 "<" Exp5 ;
+EGrt.   Exp4 ::= Exp4 ">" Exp5 ;
 
 -- MATHEMATICAL EXPRESSIONS
-EAdd.  	  Exp6 ::= Exp6 "+" Exp7 ;
-ESub.     Exp6 ::= Exp6 "-" Exp7 ;
-EMul.     Exp7 ::= Exp7 "*" Exp8 ;
-EDiv.     Exp7 ::= Exp7 "/" Exp8 ;
+EAdd.   Exp6 ::= Exp6 "+" Exp7 ;
+ESub.   Exp6 ::= Exp6 "-" Exp7 ;
+EMul.   Exp7 ::= Exp7 "*" Exp8 ;
+EDiv.   Exp7 ::= Exp7 "/" Exp8 ;
 
 -- RAW VALUES
-ENil.			Exp11 ::= "nil";
-EBool.		Exp11 ::= Boolean;
-EInt.			Exp11 ::= Integer;
-EStr.			Exp11 ::= String;
-EVar.			Exp11 ::= Ident;
-EArr.   	Exp ::= "[" [Exp] "]" ;
+ENil.   Exp11 ::= "nil";
+EBool.  Exp11 ::= Boolean;
+EInt.   Exp11 ::= Integer;
+EStr.   Exp11 ::= String;
+EVar.   Exp11 ::= Ident;
+EArr.   Exp ::= "[" [Exp] "]" ;
 
 coercions Exp 11 ;
 
-SInc.  		SSym ::= "++";
-SDec.			SSym ::= "--";
+SInc.   SSym ::= "++";
+SDec.   SSym ::= "--";
 
-BTrue. 	Boolean ::= "true" ;
+BTrue.  Boolean ::= "true" ;
 BFalse. Boolean ::= "false" ;
 
 -- OPERATORS
 
-ASgn.		AssOp ::= "=";
-AMul.		AssOp ::= "*=";
-ADiv.		AssOp ::= "/=";
-AAdd.		AssOp ::= "+=";
-ASub.		AssOp ::= "-=";
+ASgn.  AssOp ::= "=";
+AMul.  AssOp ::= "*=";
+ADiv.  AssOp ::= "/=";
+AAdd.  AssOp ::= "+=";
+ASub.  AssOp ::= "-=";
 
-Poz.	UnaOp ::= "+";
-Neg.	UnaOp ::= "-";
-LNe.	UnaOp ::= "!";
+Poz.  UnaOp ::= "+";
+Neg.  UnaOp ::= "-";
+LNe.  UnaOp ::= "!";
 
