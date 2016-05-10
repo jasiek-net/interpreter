@@ -1,0 +1,18 @@
+// recursion
+fun rek(n) {
+	if (n == 0) {
+		return 0;
+	}
+	else {
+		print("rek: " + str(n));
+		return n + rek(n-1);
+	}
+	print("koniec rek");
+}
+
+fun main() {
+	var m =	rek(5);
+	print(m);
+	print("end of program!");
+}
+

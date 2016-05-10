@@ -1,0 +1,4 @@
+fun main() {
+	var a = "22sa";
+	int(a);
+}

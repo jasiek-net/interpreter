@@ -1,0 +1,17 @@
+fun one(new) {
+	fun odd() {
+		var sec = fun() {
+			print("inner function");
+		};
+		sec();
+		print("as return");
+	}
+	new();
+	var eve = odd;
+	return eve;
+}
+
+fun main() {
+	var who = one(fun(){print("anonymous, as parameter");});
+	who();
+}

@@ -1,0 +1,10 @@
+fun main() {
+	var a = 5;
+
+	{
+		var i;
+		i = 7;
+	}
+	a += i;
+	print(a);
+}

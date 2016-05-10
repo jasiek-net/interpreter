@@ -1,0 +1,32 @@
+fun main() {
+	print("for with inner declaration");
+	for (var i = 0; i < 10; i++) {
+		print(i);
+	}
+	print("for with outer declaration");
+	var i = 10;
+	for (i = 10; i > 0; i--) {
+		print(i);
+	}
+	print("while from 5 to -4");
+	i = 5;
+	while(i > -5) {
+		print(i);
+		i -= 1;
+	}
+	if ("string" && i) {
+		print("int is negative");
+	} else {
+		print("else");
+	}
+	if (4 && "ok")
+		print("but now it works!");
+
+	{
+		var i;
+		print("new value init in block");
+		print(i);
+	}
+
+}
+

@@ -1,0 +1,29 @@
+// Array
+
+fun arr(a) {
+	print("invoke!");
+	return a;
+}
+
+fun main() {
+	var n = 10;
+	var tab = [
+		"string";
+		1 + 2;
+		true && false ; 
+		var a = 10; // this will return nil
+		arr(n);
+		arr;
+	];
+
+	tab[7] = tab;
+	tab[9] = "end of tab";
+	tab[10] = nil;
+
+	for (var i = 0; i < 9; i++) {
+		print( tab[i] );
+	}
+	print(tab);
+	var func = tab[5];
+	func(n);
+}

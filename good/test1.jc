@@ -1,0 +1,40 @@
+fun main() {
+	// Boolean
+	var b = true;
+	print(b);
+	print(!b);
+	print(b && true);
+	print(b && false);
+	print(b || true);
+	print("sas" || 5);
+	print("" || 0);
+
+	// Integers
+	var a = 4;
+	print(a);
+	print(+a);
+	print(-a);
+	a++;
+	print(a);
+	a--;
+	print(a);
+	++a;
+	print(a);
+	--a;
+	print(a);
+	a += 10;
+	print(a);
+	a -= 10;
+	print(a);
+	a *= 10;
+	print(a);
+	a /= 5;
+	print(str(a));
+
+	// String
+	var s = "12456";
+	print(int(s));
+	print(s);
+	print(s + "not number!");
+
+}
